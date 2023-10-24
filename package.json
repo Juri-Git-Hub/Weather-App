@@ -1,0 +1,12 @@
+{
+  "name": "capstone-project---weather-app",
+  "version": "1.0.0",
+  "description": "my personel weather webpage",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jurek Engelmann",
+  "license": "ISC"
+}
