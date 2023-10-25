@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jurek's Weather</title>
+</head>
+
+<body>
+    <form id="form" method="post">
+        <label for="locationName">Enter your City:</label>
+        <input type="text" id="locationName" name="inputCity">
+        <input id="searchButton" type="submit" value="Search" formaction="/weather">
+    </form>
+    <% if (locals.cityName) { %>
+        <p>
+            <%= cityName %>
+        </p>
+
+        <% } %>
+            <% if (locals.weather) { %>
+                <%= weather %>
+                    <% } %>
+</body>
+
+</html>
