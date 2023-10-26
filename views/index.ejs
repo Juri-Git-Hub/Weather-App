@@ -5,23 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jurek's Weather</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
-    <form id="form" method="post">
-        <label for="locationName">Enter your City:</label>
-        <input type="text" id="locationName" name="inputCity">
-        <input id="searchButton" type="submit" value="Search" formaction="/weather">
-    </form>
-    <% if (locals.cityName) { %>
-        <p>
-            <%= cityName %>
-        </p>
-
+    <h1>Weather by Jurek</h1>
+    <div id="citySearch">
+        <form id="form" method="post">
+            <label for="locationName">Enter your City:</label>
+            <input type="text" id="locationName" name="inputCity">
+            <input id="searchButton" type="submit" value="Search" formaction="/weather">
+        </form>
+    </div>
+    
+    <h2>
+        <% if (locals.cityName) { %>
+            <p>
+                <%= cityName %>
+            </p>
         <% } %>
-            <% if (locals.weather) { %>
-                <%= weather %>
+            </h2>
+            
+            <div id="dataPresentation">
+                <% if (locals.current) { %>
+                    <div id="currentWeather">
+                        <%= Math.round(current.temp) %>
+                            <%= current.weather[0].description %>
+                    </div>
                     <% } %>
+        </div>
 </body>
 
 </html>
