@@ -5,19 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jurek's Weather</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="styles/main.css">
 </head>
 
 <body>
-    <h1>Weather by Jurek</h1>
-    <div id="citySearch">
-        <form id="form" method="post">
-            <label for="locationName">Enter your City:</label>
-            <input type="text" id="locationName" name="inputCity">
-            <input id="searchButton" type="submit" value="Search" formaction="/weather">
-        </form>
-    </div>
-    
+    <div class="nav">
+        <div id="citySearch">
+            <form id="form" method="post" class="nav-items">
+                <label for="locationName">Enter your City:</label>
+                <input type="text" id="locationName" name="inputCity">
+                <input id="searchButton" type="submit" value="Search" formaction="/weather">
+            </form>
+            </div>
+        <h1 class="nav-items">Weather by Jurek</h1>
+        </div>
     <h2>
         <% if (locals.cityName) { %>
             <p>
@@ -26,14 +27,141 @@
         <% } %>
             </h2>
             
-            <div id="dataPresentation">
+        <div id="dataPresentation">
+            <div id="current">
                 <% if (locals.current) { %>
                     <div id="currentWeather">
-                        <%= Math.round(current.temp) %>
+                        <p>
+                            <%= Math.round(current.temp) %>
+                        </p>
+                        <p>
                             <%= current.weather[0].description %>
-                    </div>
-                    <% } %>
-        </div>
+                        </p>
+                        </div>
+                        <% } %>
+                            </div>
+                            <div id="daily">
+                                <% if (locals.day1) { %>
+                                    <div id="day1" class="futureDay">
+                                        <p>
+                                            <%= day1.temp.min %>
+                                                <%= day1.temp.max %>
+                                        </p>
+                                        <p>
+                                            <%= day1.weather[0].description %>
+                                        </p>
+                                        <p>
+                                            <%= day1.pop * 100%>%
+                                                <%= day1.rain %>mm
+                                        </p>
+                                        <p>
+                                            <%= %>
+                                        </p>
+                                    </div>
+                                    <div id="day2" class="futureDay">
+                                        <p>
+                                            <%= day2.temp.min %>
+                                                <%= day2.temp.max %>
+                                        </p>
+                                        <p>
+                                            <%= day2.weather[0].description %>
+                                        </p>
+                                        <p>
+                                            <%= day2.pop * 100%>%
+                                                <%= day2.rain %>mm
+                                        </p>
+                                        <p>
+                                            <%= %>
+                                        </p>
+                                    </div>
+                                    <div id="day3" class="futureDay">
+                                        <p>
+                                            <%= day3.temp.min %>
+                                                <%= day3.temp.max %>
+                                        </p>
+                                        <p>
+                                            <%= day3.weather[0].description %>
+                                        </p>
+                                        <p>
+                                            <%= day3.pop * 100%>%
+                                                <%= day3.rain %>mm
+                                        </p>
+                                        <p>
+                                            <%= %>
+                                        </p>
+                                    </div>
+                                    <div id="day4" class="futureDay">
+                                        <p>
+                                            <%= day4.temp.min %>
+                                                <%= day4.temp.max %>
+                                        </p>
+                                        <p>
+                                            <%= day4.weather[0].description %>
+                                        </p>
+                                        <p>
+                                            <%= day4.pop * 100%>%
+                                                <%= day4.rain %>mm
+                                        </p>
+                                        <p>
+                                            <%= %>
+                                        </p>
+                                    </div>
+                                    <div id="day5" class="futureDay">
+                                        <p>
+                                            <%= day5.temp.min %>
+                                                <%= day5.temp.max %>
+                                        </p>
+                                        <p>
+                                            <%= day5.weather[0].description %>
+                                        </p>
+                                        <p>
+                                            <%= day5.pop * 100%>%
+                                                <%= day5.rain %>mm
+                                        </p>
+                                        <p>
+                                            <%= %>
+                                        </p>
+                                    </div>
+                                    <div id="day6" class="futureDay">
+                                        <p>
+                                            <%= day6.temp.min %>
+                                                <%= day6.temp.max %>
+                                        </p>
+                                        <p>
+                                            <%= day6.weather[0].description %>
+                                        </p>
+                                        <p>
+                                            <%= day6.pop * 100%>%
+                                                <%= day6.rain %>mm
+                                        </p>
+                                        <p>
+                                            <%= %>
+                                        </p>
+                                    </div>
+                                    <div id="day7" class="futureDay">
+                                        <p>
+                                            <%= day7.temp.min %>
+                                                <%= day7.temp.max %>
+                                        </p>
+                                        <p>
+                                            <%= day7.weather[0].description %>
+                                        </p>
+                                        <p>
+                                            <%= day7.pop * 100%>%
+                                                <%= day7.rain %>mm
+                                        </p>
+                                        <p>
+                                            <%= %>
+                                        </p>
+                                    </div>
+                                    <div id="trademark" class="futureDay">
+                                        <h3>By Jurek</h3>
+                                    </div>
+                                    <% } %>
+                            
+                            </div>
+                            </div>
+
 </body>
 
 </html>
